@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- homework make the bottom thing pop up only after they hover over something in the middle of the page -->
+	<title>intro js</title>
+
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+
+	<style type="text/css">
+
+	.style-font {
+		color:#174EBD;
+			border: 16px solid #b5a759;
+			letter-spacing:1pt;
+			word-spacing:4pt;
+			font-size:18px;
+			text-align:left;
+			font-family:arial, helvetica, sans-serif;
+			line-height:2;
+	}
+
+	</style>
+
+</head>
+<body>
+
+	<div class="row">
+		<div class="col-md-6">
+			<img src="http://upload.wikimedia.org/wikipedia/commons/7/7f/Pug_portrait.jpg" width="300" height="200" alt="pug" id="pug-image">
+			<p id="pug-text">
+				this is a pug
+			</p>
+		</div>
+		<div class="col-md-6">
+			<img src="http://www.helpinghomelesscats.com/images/cat1.jpg" width="300" height="200" alt="cat" id="cat-image">
+			<p id="cat-text">
+				this is a cat
+			</p>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-md-2 col-md-offset-5">
+			<button id="change-text">change text</button>
+		</div>
+	</div>
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
+	<script type="text/javascript">
+		$( document ).ready(function() {
+			$('#pug-text, #cat-text').hide();
+
+			$('#pug-image').on({
+				mouseenter: function(){
+					$('#pug-text').fadeIn('slow');
+				},
+				mouseleave: function(){
+					$('#pug-text').fadeOut('slow');
+				}
+			})
+
+			$('#cat-image').on({
+				mouseenter: function(){
+					$('#cat-text').fadeIn('slow');
+				},
+				mouseleave: function(){
+					$('#cat-text').fadeOut('slow');
+				}
+			})
+
+			$('#change-text').on('click', function(){
+				
+				$('#pug-text').addClass('style-font');
+
+				$('#cat-text').addClass('style-font');
+
+			});
+
+
+		});
+	</script>
+
+</body>
+</html>
